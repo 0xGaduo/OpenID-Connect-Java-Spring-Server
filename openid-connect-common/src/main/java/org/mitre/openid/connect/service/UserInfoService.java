@@ -52,4 +52,5 @@ public interface UserInfoService {
 	 */
 	public UserInfo getByEmailAddress(String email);
 
+	UserInfo save(UserInfo userinfo);
 }
