@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2016 The MITRE Corporation
+ * Copyright 2017 The MITRE Corporation
  *   and the MIT Internet Trust Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -204,15 +204,7 @@ public class TofuUserApprovalHandler implements UserApprovalHandler {
 					//Make sure this scope is allowed for the given client
 					if (systemScopes.scopesMatch(client.getScope(), approveSet)) {
 
-						// If it's structured, assign the user-specified parameter
-						SystemScope systemScope = systemScopes.getByValue(scope);
-						if (systemScope != null && systemScope.isStructured()){
-							String paramValue = approvalParams.get("scopeparam_" + scope);
-							allowedScopes.add(scope + ":"+paramValue);
-							// .. and if it's unstructured, we're all set
-						} else {
-							allowedScopes.add(scope);
-						}
+						allowedScopes.add(scope);
 					}
 
 				}

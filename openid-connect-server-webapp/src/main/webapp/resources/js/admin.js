@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2016 The MITRE Corporation
+ * Copyright 2017 The MITRE Corporation
  *   and the MIT Internet Trust Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -375,13 +375,13 @@ var ErrorHandlerView = Backbone.View.extend({
 			message = {};
 		}
 
-		if (message.log) {
-			console.log(message.log);
-		}
-		
 		var _self = this;
 		
 		return function(model, response, options) {
+			
+			if (message.log) {
+				console.log(message.log);
+			}
 			
 			_self.showErrorMessage(
 					_self.headerTemplate({message: message, model: model, response: response, options: options}),

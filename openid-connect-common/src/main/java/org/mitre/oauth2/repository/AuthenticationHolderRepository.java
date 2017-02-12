@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2016 The MITRE Corporation
+ * Copyright 2017 The MITRE Corporation
  *   and the MIT Internet Trust Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +18,7 @@ package org.mitre.oauth2.repository;
 
 import java.util.List;
 
+import org.mitre.data.PageCriteria;
 import org.mitre.oauth2.model.AuthenticationHolderEntity;
 
 public interface AuthenticationHolderRepository {
@@ -31,5 +32,5 @@ public interface AuthenticationHolderRepository {
 
 	public List<AuthenticationHolderEntity> getOrphanedAuthenticationHolders();
 
-
+    public List<AuthenticationHolderEntity> getOrphanedAuthenticationHolders(PageCriteria pageCriteria);
 }
